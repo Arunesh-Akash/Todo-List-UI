@@ -1,0 +1,103 @@
+.main-container {
+
+  display: flex; 
+  height: 100vh; 
+}
+
+.img-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.img-container img{
+  height: 100vh;
+  width: 50vw;
+}
+
+.form-container {
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 25px;
+}
+.form-container form{
+  display: flex;
+  flex-direction: column;
+}
+.form-container Button{
+  margin-top: 2.5rem;
+  background-color: rgb(4, 105, 105);
+  border-radius: 9px;
+  height: 3rem;
+}
+.checkbox-container{
+  display: flex;
+  align-items: center;
+}
+.checkbox-container span{
+  margin-left: auto;
+  cursor: pointer;
+}
+.other-container {
+  display: flex;
+  align-items: center;
+  margin-top: 27px;
+  text-align: center;
+}
+
+.other-container hr {
+  flex: 1;
+  border: none;
+  height: 1px;
+  background-color:  rgb(4, 105, 105);
+}
+
+.or-text {
+  margin: 0 16px;
+  font-weight: bold;
+}
+.google-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.google-container .MuiButton-root{
+  padding: 18px;
+  width: 10rem;
+}
+.google-icon{
+  font-size: 27px;
+}
+.footer-container{
+  margin-top: 20px;
+}
+.footer-container span{
+  margin-left: 5px;
+  cursor: pointer;
+  text-decoration-line: underline;
+  color:  rgb(4, 105, 105);
+}
+@media (max-width: 768px) {
+  .img-container img {
+    width: 100%;
+  }
+
+  .form-container {
+    margin-top: 10px;
+  }
+
+  .google-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .google-container .MuiButton-root {
+    width: 100%; 
+  }
+}
