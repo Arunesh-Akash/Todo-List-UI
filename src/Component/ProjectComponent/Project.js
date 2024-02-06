@@ -33,7 +33,7 @@ export default function Project() {
             const decodeToken = jwtDecode(token);
             const email = decodeToken.email;
 
-            const response = await axios.get(`http://localhost:4500/user/todo?email=${email}`, {
+            const response = await axios.get(`https://todo-list-vm6k.onrender.com/user/todo?email=${email}`, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${token}`
@@ -94,7 +94,7 @@ export default function Project() {
             const email = decodeToken.email;
             const todoId = doneCards[index]._id;
             console.log("Todoid:",todoId);
-            const response = await axios.delete(`http://localhost:4500/user/todo/delete?todoId=${todoId}&email=${email}`);
+            const response = await axios.delete(`https://todo-list-vm6k.onrender.com/user/todo/delete?todoId=${todoId}&email=${email}`);
             console.log(response.data);
           const updatedDoneCards = [...doneCards];
             updatedDoneCards.splice(index, 1);
@@ -111,7 +111,7 @@ export default function Project() {
             const email = decodeToken.email;
 
             const newCardData = { title: todoCards[index].title, description: todoCards[index].description };
-            const response = await axios.post(`http://localhost:4500/user/todo?email=${email}`, newCardData, {
+            const response = await axios.post(`https://todo-list-vm6k.onrender.com/user/todo?email=${email}`, newCardData, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${token}`,
@@ -141,7 +141,7 @@ export default function Project() {
             const decodeToken = jwtDecode(token);
             const email = decodeToken.email;
             const todoId = todoCards[index]._id;
-            const response = await axios.put(`http://localhost:4500/user/todo/move-to-inprogress?todoId=${todoId}&email=${email}`);
+            const response = await axios.put(`https://todo-list-vm6k.onrender.com/user/todo/move-to-inprogress?todoId=${todoId}&email=${email}`);
             const movedTodo = response.data.todo;
 
             setTodoCards(todoCards.filter((_, i) => i !== index));
@@ -158,7 +158,7 @@ export default function Project() {
             const decodeToken = jwtDecode(token);
             const email = decodeToken.email;
             const todoId = inProgressCards[index]._id;
-            const response = await axios.put(`http://localhost:4500/user/todo/move-to-done?todoId=${todoId}&email=${email}`);
+            const response = await axios.put(`https://todo-list-vm6k.onrender.com/user/todo/move-to-done?todoId=${todoId}&email=${email}`);
             const movedTodo = response.data.todo;
 
             setInProgressCards(inProgressCards.filter((_, i) => i !== index));

@@ -45,7 +45,7 @@ function SignUp() {
   async function handleSubmit(e) {
     e.preventDefault();
     if (isSignUp) {
-      await axios.post('http://localhost:4500/user/signup', { name, email, password }).then((response) => {
+      await axios.post('https://todo-list-vm6k.onrender.com/user/signup', { name, email, password }).then((response) => {
         console.log(response.data);
         setName('');
         setEmail('');
@@ -59,7 +59,7 @@ function SignUp() {
       })
     }
     else {
-      await axios.post('http://localhost:4500/user/login', { email, password }).then((response) => {
+      await axios.post('https://todo-list-vm6k.onrender.com/user/login', { email, password }).then((response) => {
         console.log(response.data);
         setEmail('');
         setPassword('');
